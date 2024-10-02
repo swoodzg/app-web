@@ -15,11 +15,19 @@ const BtnModal = ({ children, title, textButton, icon }) => {
 
   return (
     <>
-      <Button onPress={onOpen} className="bg-primary text-white  shadow-lg mb-4 w-52 h-24">
+      <Button 
+        onPress={onOpen} 
+        className="bg-primary text-white shadow-lg mb-4 w-full sm:w-52 h-24" // Cambiar a w-full para móviles
+      >
         {textButton}
         {icon}
       </Button>
-      <Modal isOpen={isOpen} onOpenChange={handlerCloseModal} placement="center" className="w-1/3">
+      <Modal 
+        isOpen={isOpen} 
+        onOpenChange={handlerCloseModal} 
+        placement="center" 
+        className="w-full sm:w-1/3" // Cambiar a w-full para móviles
+      >
         <ModalContent>
           {() => (
             <>
@@ -34,3 +42,4 @@ const BtnModal = ({ children, title, textButton, icon }) => {
 };
 
 export default BtnModal;
+
